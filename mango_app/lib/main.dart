@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:mango_app/pages/customer_identification.dart';
+import 'package:mango_app/pages/createEvent/event_date.dart';
+import 'package:mango_app/pages/createEvent/event_name.dart';
+import 'package:mango_app/pages/createEvent/event_time.dart';
+import 'package:mango_app/pages/first_page.dart';
 import 'package:mango_app/utils/app_controller.dart';
 import 'package:mango_app/utils/constants.dart';
 
@@ -23,13 +26,25 @@ class MyApp extends StatelessWidget {
       ),
       defaultTransition: Transition.leftToRight,
       textDirection: TextDirection.rtl,
-      home: CustomerIdentificationPage(),
-      initialRoute: '/CustomerIdentification',
+      home: firstPagePage(),
+      initialRoute: '/firstPage',
       getPages: [
         GetPage(
-          name: '/CustomerIdentification',
-          page: () => CustomerIdentificationPage(),
-        )
+          name: '/firstPage',
+          page: () => firstPagePage(),
+        ),
+        GetPage(
+          name: '/createEvent/eventName',
+          page: () => EventNamePage(),
+        ),
+        GetPage(
+          name: '/createEvent/eventDate',
+          page: () => EventDatePage(),
+        ),
+        GetPage(
+          name: '/createEvent/eventTime',
+          page: () => EventTimePage(),
+        ),
       ],
       debugShowCheckedModeBanner: false,
     );

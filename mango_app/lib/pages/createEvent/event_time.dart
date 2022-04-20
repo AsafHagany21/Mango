@@ -10,9 +10,9 @@ import 'package:mango_app/widgets/texts/mango_alert_text.dart';
 import 'package:mango_app/widgets/texts/mango_header_text.dart';
 import 'package:mango_app/widgets/texts/mango_secondary_text.dart';
 
-class CustomerIdentificationPage extends StatelessWidget {
-  CustomerIdentificationPage({Key? key}) : super(key: key);
-  final TextEditingController nameController = TextEditingController();
+class EventTimePage extends StatelessWidget {
+  EventTimePage({Key? key}) : super(key: key);
+  final TextEditingController timeController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -36,35 +36,24 @@ class CustomerIdentificationPage extends StatelessWidget {
               children: [
                 Column(
                   children: [
-                    const MangoHeaderText(text: 'fukingggggggg mangoooo'),
-                    const MangoHeaderText(text: 'fukingggggggg mangoooo'),
-                    const MangoHeaderText(text: 'fukingggggggg mangoooo'),
-                    const MangoHeaderText(text: 'fukingggggggg mangoooo'),
-                    const MangoHeaderText(text: 'fukingggggggg mangoooo'),
-                    const MangoHeaderText(text: 'fukingggggggg mangoooo'),
-                    const MangoHeaderText(text: 'fukingggggggg mangoooo'),
-                    const MangoHeaderText(text: 'fukingggggggg mangoooo'),
-                    const MangoHeaderText(text: 'fukingggggggg mangoooo'),
-                    const MangoHeaderText(text: 'fukingggggggg mangoooo'),
-                    const MangoHeaderText(text: 'fukingggggggg mangoooo'),
+                    const MangoHeaderText(text: 'זמן האירוע'),
+                    const MangoSecondaryText(
+                        text: 'ניתן לבחור כמה זמנים אופציונלים'),
+                    const SizedBox(height: 15),
+                    MangoTextField(
+                      controller: timeController,
+                      labelText: "דמיין שבחרת כמה",
+                    )
                   ],
                 ),
+                const SizedBox(height: 20),
               ],
             ),
             Expanded(child: Container()),
             ContinueButton(
                 onPressed: () {
-                  if (appController.chosenAges.isNotEmpty) {
-                    appController.setCustomerName(nameController.text);
-                    // Get.to(() => const PersonalizationTimePage());
-                  } else {
-                    showDialog<String>(
-                      context: context,
-                      builder: (BuildContext context) => const AlertDialog(
-                        title: MangoAlertText(text: 'חובה לבחור גיל'),
-                      ),
-                    );
-                  }
+                  appController.setEventName(timeController.text);
+                  // Get.to(() => const PersonalizationTimePage());
                 },
                 child: const Text('הבא')),
             const SizedBox(
