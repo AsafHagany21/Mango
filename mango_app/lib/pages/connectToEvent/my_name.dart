@@ -49,7 +49,6 @@ class MyNamePage extends StatelessWidget {
             Expanded(child: Container()),
             ContinueButton(
                 onPressed: () {
-                  appController.setEventName(nameController.text);
                   Get.to(() => MyFreeDatesPage());
                 },
                 child: const Text('הבא')),

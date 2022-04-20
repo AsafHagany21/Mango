@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:mango_app/pages/summary_page.dart';
 import 'package:mango_app/pages/connectToEvent/my_equipment.dart';
 import 'package:mango_app/pages/connectToEvent/my_free_dates.dart';
 import 'package:mango_app/pages/connectToEvent/my_name.dart';
@@ -69,6 +70,10 @@ class MyApp extends StatelessWidget {
         GetPage(
           name: '/connectToEvent/MyPayments',
           page: () => MyPaymentsPage(),
+        ),
+        GetPage(
+          name: '/summaryPage',
+          page: () => SummaryPage(),
         ),
       ],
       debugShowCheckedModeBanner: false,

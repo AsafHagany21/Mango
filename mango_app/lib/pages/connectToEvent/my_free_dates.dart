@@ -7,6 +7,7 @@ import 'package:mango_app/widgets/form/continue_button.dart';
 import 'package:mango_app/widgets/form/mango_back_button.dart';
 import 'package:mango_app/widgets/form/mango_multi_select.dart';
 import 'package:mango_app/widgets/form/page_index.dart';
+import 'package:mango_app/widgets/sub%20page/mango_free_dates.dart';
 import 'package:mango_app/widgets/texts/mango_header_text.dart';
 
 class MyFreeDatesPage extends StatelessWidget {
@@ -31,20 +32,10 @@ class MyFreeDatesPage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            Column(
-              children: [
-                Column(
-                  children: [
-                    const MangoHeaderText(text: 'מתי אני פנוי/ה?'),
-                    const SizedBox(height: 15),
-                    MangoMultiSelect(
-                        valuesList: appController.MyFreeDatesList,
-                        chosenValuesList: appController.chosenMyFreeDates),
-                  ],
-                ),
-                const SizedBox(height: 20),
-              ],
-            ),
+            const MangoHeaderText(text: 'מתי אני פנוי/ה?'),
+            const SizedBox(height: 15),
+            const MangoFreeDates(),
+            const SizedBox(height: 20),
             Expanded(child: Container()),
             ContinueButton(
                 onPressed: () {

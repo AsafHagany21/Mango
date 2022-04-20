@@ -10,6 +10,7 @@ class MangoHeaderText extends StatelessWidget {
     return Text(
       text,
       textDirection: TextDirection.rtl,
+      textAlign: TextAlign.center,
       style: const TextStyle(
         fontSize: 30,
         color: Color.fromARGB(255, 0, 0, 0),

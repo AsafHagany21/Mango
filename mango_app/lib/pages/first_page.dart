@@ -39,7 +39,7 @@ class firstPagePage extends StatelessWidget {
                       onPressed: () {
                         Get.to(() => EventNamePage());
                       },
-                      child: const Text('צור אירוע'),
+                      child: const Text('צור אירוע חדש'),
                     ),
                     const SizedBox(
                       height: 60,

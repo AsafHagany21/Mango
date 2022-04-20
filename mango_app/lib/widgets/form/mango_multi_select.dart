@@ -11,14 +11,16 @@ class MangoMultiSelect extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: MediaQuery.of(context).size.height * 0.6,
+      height: valuesList.length * 35,
       child: ListView(
         // scrollDirection: Axis.horizontal,
         children: List<Widget>.generate(
             valuesList.length,
             (index) => Row(
                   children: [
-                    const SizedBox(width: 30),
+                    const SizedBox(
+                      width: 30,
+                    ),
                     MangoChoiceChip(
                       valuesList: valuesList,
                       chosenValuesList: chosenValuesList,

@@ -9,6 +9,7 @@ class MangoSecondaryText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       text,
+      textAlign: TextAlign.center,
       style: const TextStyle(
           fontSize: 10, color: Colors.black, fontWeight: FontWeight.normal),
     );

@@ -57,8 +57,7 @@ class EventDatePage extends StatelessWidget {
             Expanded(child: Container()),
             ContinueButton(
                 onPressed: () {
-                  appController.setEventName(dateController.text);
-                  Get.to(() => MyEquipmentPage());
+                  Get.to(() => EventTimePage());
                 },
                 child: const Text('הבא')),
             const SizedBox(

@@ -53,10 +53,9 @@ class EventTimePage extends StatelessWidget {
             Expanded(child: Container()),
             ContinueButton(
                 onPressed: () {
-                  appController.setEventName(timeController.text);
                   Get.to(() => firstPagePage());
                 },
-                child: const Text('הבא')),
+                child: const Text('יצירת אירוע')),
             const SizedBox(
               height: 10,
             ),

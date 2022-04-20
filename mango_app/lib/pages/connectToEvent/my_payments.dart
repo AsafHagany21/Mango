@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:mango_app/pages/summary_page.dart';
 import 'package:mango_app/pages/createEvent/event_configuration.dart';
 import 'package:mango_app/utils/constants.dart';
 import 'package:mango_app/widgets/form/continue_button.dart';
 import 'package:mango_app/widgets/form/mango_back_button.dart';
 import 'package:mango_app/widgets/form/mango_text_field.dart';
 import 'package:mango_app/widgets/form/page_index.dart';
+import 'package:mango_app/widgets/sub%20page/mango_payments.dart';
 import 'package:mango_app/widgets/texts/mango_header_text.dart';
 
 class MyPaymentsPage extends StatelessWidget {
@@ -33,13 +35,10 @@ class MyPaymentsPage extends StatelessWidget {
             Column(
               children: [
                 Column(
-                  children: [
-                    const MangoHeaderText(text: 'כמה שילמתי?'),
-                    const SizedBox(height: 15),
-                    MangoTextField(
-                      labelText: "מלאאאא",
-                      controller: nameController,
-                    )
+                  children: const [
+                    MangoHeaderText(text: 'כמה שילמתי?'),
+                    SizedBox(height: 15),
+                    MangoPayments(),
                   ],
                 ),
                 const SizedBox(height: 20),
@@ -47,11 +46,11 @@ class MyPaymentsPage extends StatelessWidget {
             ),
             Expanded(child: Container()),
             ContinueButton(
-                onPressed: () {
-                  appController.setEventName(nameController.text);
-                  // Get.to(() => EventConfigurationPage());
-                },
-                child: const Text('הבא')),
+              onPressed: () {
+                Get.to(() => SummaryPage());
+              },
+              child: const Text('הבא'),
+            ),
             const SizedBox(
               height: 10,
             ),

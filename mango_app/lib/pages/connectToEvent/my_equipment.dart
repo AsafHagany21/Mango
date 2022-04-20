@@ -7,6 +7,8 @@ import 'package:mango_app/widgets/form/continue_button.dart';
 import 'package:mango_app/widgets/form/mango_back_button.dart';
 import 'package:mango_app/widgets/form/mango_text_field.dart';
 import 'package:mango_app/widgets/form/page_index.dart';
+import 'package:mango_app/widgets/sub%20page/mango_equipment.dart';
+import 'package:mango_app/widgets/sub%20page/mango_free_dates.dart';
 import 'package:mango_app/widgets/texts/mango_header_text.dart';
 
 class MyEquipmentPage extends StatelessWidget {
@@ -31,25 +33,12 @@ class MyEquipmentPage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            Column(
-              children: [
-                Column(
-                  children: [
-                    const MangoHeaderText(text: 'איזה ציוד אני יכול להביא?'),
-                    const SizedBox(height: 15),
-                    MangoTextField(
-                      labelText: "אוהל",
-                      controller: nameController,
-                    )
-                  ],
-                ),
-                const SizedBox(height: 20),
-              ],
-            ),
+            const MangoHeaderText(text: 'איזה ציוד אני יכול להביא?'),
+            SizedBox(height: 15),
+            const MangoEquipment(),
             Expanded(child: Container()),
             ContinueButton(
                 onPressed: () {
-                  appController.setEventName(nameController.text);
                   Get.to(() => MyPaymentsPage());
                 },
                 child: const Text('הבא')),
