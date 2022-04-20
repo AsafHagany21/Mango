@@ -1,19 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:mango_app/pages/first_page.dart';
+import 'package:mango_app/pages/connectToEvent/my_equipment.dart';
+import 'package:mango_app/pages/createEvent/event_date.dart';
 import 'package:mango_app/utils/constants.dart';
 import 'package:mango_app/widgets/form/continue_button.dart';
 import 'package:mango_app/widgets/form/mango_back_button.dart';
-import 'package:mango_app/widgets/form/mango_single_select.dart';
-import 'package:mango_app/widgets/form/mango_text_field.dart';
+import 'package:mango_app/widgets/form/mango_multi_select.dart';
 import 'package:mango_app/widgets/form/page_index.dart';
-import 'package:mango_app/widgets/texts/mango_alert_text.dart';
 import 'package:mango_app/widgets/texts/mango_header_text.dart';
-import 'package:mango_app/widgets/texts/mango_secondary_text.dart';
 
-class EventTimePage extends StatelessWidget {
-  EventTimePage({Key? key}) : super(key: key);
-  final TextEditingController timeController = TextEditingController();
+class MyFreeDatesPage extends StatelessWidget {
+  MyFreeDatesPage({Key? key}) : super(key: key);
+  final TextEditingController dateController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -37,14 +35,11 @@ class EventTimePage extends StatelessWidget {
               children: [
                 Column(
                   children: [
-                    const MangoHeaderText(text: 'זמן האירוע'),
-                    const MangoSecondaryText(
-                        text: 'ניתן לבחור כמה זמנים אופציונלים'),
+                    const MangoHeaderText(text: 'מתי אני פנוי/ה?'),
                     const SizedBox(height: 15),
-                    MangoTextField(
-                      controller: timeController,
-                      labelText: "דמיין שבחרת כמה",
-                    )
+                    MangoMultiSelect(
+                        valuesList: appController.MyFreeDatesList,
+                        chosenValuesList: appController.chosenMyFreeDates),
                   ],
                 ),
                 const SizedBox(height: 20),
@@ -53,8 +48,7 @@ class EventTimePage extends StatelessWidget {
             Expanded(child: Container()),
             ContinueButton(
                 onPressed: () {
-                  appController.setEventName(timeController.text);
-                  Get.to(() => firstPagePage());
+                  Get.to(() => MyEquipmentPage());
                 },
                 child: const Text('הבא')),
             const SizedBox(

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:mango_app/pages/createEvent/event_configuration.dart';
 import 'package:mango_app/pages/createEvent/event_date.dart';
 import 'package:mango_app/utils/constants.dart';
 import 'package:mango_app/widgets/form/continue_button.dart';
@@ -51,7 +52,7 @@ class EventNamePage extends StatelessWidget {
             ContinueButton(
                 onPressed: () {
                     appController.setEventName(nameController.text);
-                    Get.to(() =>  EventDatePage());
+                    Get.to(() =>  EventConfigurationPage());
                 },
                 child: const Text('הבא')),
             const SizedBox(

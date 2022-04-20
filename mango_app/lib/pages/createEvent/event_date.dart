@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:mango_app/pages/connectToEvent/my_equipment.dart';
 import 'package:mango_app/pages/createEvent/event_time.dart';
 import 'package:mango_app/utils/constants.dart';
 import 'package:mango_app/widgets/form/continue_button.dart';
@@ -17,6 +18,9 @@ class EventDatePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // if (!appController.chosenEventConfigurationOptions.contains("קביעת שעה")) {
+    //   Get.to(() => EventTimePage());
+    // }
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.transparent,
@@ -38,7 +42,8 @@ class EventDatePage extends StatelessWidget {
                 Column(
                   children: [
                     const MangoHeaderText(text: 'תאריך האירוע'),
-                    const MangoSecondaryText(text: 'ניתן לבחור כמה תאריכים אופציונלים'),
+                    const MangoSecondaryText(
+                        text: 'ניתן לבחור כמה תאריכים אופציונלים'),
                     const SizedBox(height: 15),
                     MangoTextField(
                       controller: dateController,
@@ -52,8 +57,8 @@ class EventDatePage extends StatelessWidget {
             Expanded(child: Container()),
             ContinueButton(
                 onPressed: () {
-                    appController.setEventName(dateController.text);
-                    Get.to(() =>  EventTimePage());
+                  appController.setEventName(dateController.text);
+                  Get.to(() => MyEquipmentPage());
                 },
                 child: const Text('הבא')),
             const SizedBox(

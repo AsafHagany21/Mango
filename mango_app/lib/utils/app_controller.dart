@@ -9,11 +9,20 @@ class AppController extends GetxController {
   var targetName = ''.obs;
   Map data = {};
 
-  // multi/single select
-  var agesList = ["50+", "40-49", "30-39", "20-29", "19-"].obs;
-  var chosenAges = [].obs;
-  var chosenAgesPrev = [].obs;
-  
+  // events multi/single select
+  var EventConfigurationOptionsList =
+      ["קביעת תאריך", "קביעת שעה", "חלוקת ציוד", "חלוקת כספים"].obs;
+  var chosenEventConfigurationOptions = [].obs;
+  var chosenEventConfigurationOptionsPrev = [].obs;
+// my multi/single select
+  var MyFreeDatesList = [
+    "12.5",
+    "13.5",
+    "14.5",
+    "15.5",
+  ].obs;
+  var chosenMyFreeDates = [].obs;
+  var chosenMyFreeDatesPrev = [].obs;
 
   String surveyId = '';
   void initApp() async {
@@ -28,10 +37,6 @@ class AppController extends GetxController {
   }
 
   void setEventName(String name) => data['eventName'] = name.toString();
-  
-
-
-
 
   /// send http request with all the data from the survey
   void sendData(BuildContext context) async {
@@ -57,4 +62,3 @@ class AppController extends GetxController {
     ScaffoldMessenger.of(context).showSnackBar(snackBar);
   }
 }
-

@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:mango_app/pages/connectToEvent/my_equipment.dart';
+import 'package:mango_app/pages/connectToEvent/my_free_dates.dart';
+import 'package:mango_app/pages/connectToEvent/my_name.dart';
+import 'package:mango_app/pages/connectToEvent/my_payments.dart';
+import 'package:mango_app/pages/createEvent/event_configuration.dart';
 import 'package:mango_app/pages/createEvent/event_date.dart';
 import 'package:mango_app/pages/createEvent/event_name.dart';
 import 'package:mango_app/pages/createEvent/event_time.dart';
@@ -34,6 +39,10 @@ class MyApp extends StatelessWidget {
           page: () => firstPagePage(),
         ),
         GetPage(
+          name: '/createEvent/eventConfiguration',
+          page: () => EventConfigurationPage(),
+        ),
+        GetPage(
           name: '/createEvent/eventName',
           page: () => EventNamePage(),
         ),
@@ -44,6 +53,22 @@ class MyApp extends StatelessWidget {
         GetPage(
           name: '/createEvent/eventTime',
           page: () => EventTimePage(),
+        ),
+        GetPage(
+          name: '/connectToEvent/MyName',
+          page: () => MyNamePage(),
+        ),
+        GetPage(
+          name: '/connectToEvent/MyEquipment',
+          page: () => MyEquipmentPage(),
+        ),
+        GetPage(
+          name: '/connectToEvent/MyFreeDates',
+          page: () => MyFreeDatesPage(),
+        ),
+        GetPage(
+          name: '/connectToEvent/MyPayments',
+          page: () => MyPaymentsPage(),
         ),
       ],
       debugShowCheckedModeBanner: false,
